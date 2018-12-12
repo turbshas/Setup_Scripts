@@ -72,6 +72,9 @@ fi
 output "============== Installing ACPI utility =========================="
 sudo $PKGMGR acpi
 
+output "=============== Cloning the repo ================="
+git clone https://github.com/turbshas/Setup_Scripts.git ~/.settings
+cd ~/.settings
 
 #install zsh if not installed
 if [ -z "${zsh_prog}" ]; then
@@ -181,4 +184,3 @@ ln -s "${HOME}/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "$
 output "=============== vimrc and zshrc files are now in your home folder ================="
 output "=============== Add custom vim settings to .myvimrc and zsh settings to .myzshrc files ============"
 output "=============== Setup successful =================="
-output "=============== Remember to rename this folder to .settings =================="
