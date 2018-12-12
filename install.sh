@@ -97,6 +97,8 @@ git clone https://github.com/marzocchi/zsh-notify.git ${ZSH_CUSTOM:-~/.oh-my-zsh
 output "=============== Setting up Soft Links ================="
 ln -s ~/.settings/vimrc ~/.vimrc
 mv ~/.zshrc ~/.zshrc.orig.ohmyzsh
+echo "\"Add your custom vim settings to this file" > ~/.myvimrc
+echo "#Add your custom zsh settings to this file" > ~/.myzshrc
 ln -s ~/.settings/zshrc ~/.zshrc
 
 output "=============== Setting up cscope maps ====================="
@@ -177,4 +179,6 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "${HOME}/.oh-my-zs
 ln -s "${HOME}/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "${HOME}/.oh-my-zsh/themes/spaceship.zsh-theme"  
 
 output "=============== vimrc and zshrc files are now in your home folder ================="
+output "=============== Add custom vim settings to .myvimrc and zsh settings to .myzshrc files ============"
 output "=============== Setup successful =================="
+output "=============== Remember to rename this folder to .settings =================="
