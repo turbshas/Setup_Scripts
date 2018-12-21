@@ -12,7 +12,7 @@ cd ~/pebble-dev
 # The name suggests it is a tar.gz file (which is actually the way I created it), but after downloading
 # from google drive, it appears to be a tar.bz2 file. idk how tf this happened, but w/e I'm too lazy to
 # change the name
-tar -jxf $PEBBLE_DEV_NAME
+tar -jxf $PEBBLE_DEV_NAME || exit
 echo "export PATH=~/pebble-dev/$PEBBLE_DEV_NAME/bin:\$PATH" >> ~/.myzshrc
 . ~/.myzshrc
 cd $PEBBLE_DEV_NAME
@@ -29,7 +29,7 @@ cd ~
 # The name suggests it is a tar.gz file (which is actually the way I created it), but after downloading
 # from google drive, it appears to be a tar.bz2 file. idk how tf this happened, but w/e I'm too lazy to
 # change the name
-tar -jxf $PEBBLE_SDK
+tar -jxf $PEBBLE_SDK || exit
 
 # Clone repositories
 cd ~
