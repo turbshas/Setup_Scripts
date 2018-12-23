@@ -1,4 +1,4 @@
-This repo contains my vimrc and zshrc files
+This repo contains my vimrc/zshrc/terminator/pebble setup files
 
 To install these files locally, use this command
 
