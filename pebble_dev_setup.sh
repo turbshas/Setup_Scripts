@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prerequisites
-sudo apt install -y python-pip python2.7-dev python-gevent libsdl1.2debian libfdt1 libpixman-1-0 git gcc-arm-none-eabi npm perl
+sudo apt install -y python-pip python2.7-dev python-gevent libsdl1.2debian libfdt1 libpixman-1-0 git gcc-arm-none-eabi npm perl gdb-multiarch
 pip install virtualenv
 
 # Setup pebble-dev directory, whatever that's supposed to do
