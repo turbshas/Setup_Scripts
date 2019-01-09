@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 #check what distro we are on
 if [ -f /etc/os-release ]; then
     . /etc/os-release
