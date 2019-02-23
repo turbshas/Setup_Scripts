@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 # Prerequisites
 sudo apt install -y python-pip python2.7-dev python-gevent libsdl1.2debian libfdt1 libpixman-1-0 git gcc-arm-none-eabi npm perl gdb-multiarch libnewlib-arm-none-eabi
 pip install virtualenv
@@ -68,7 +70,7 @@ if [ ! -e ~/FreeRTOS-Pebble/Resources/snowy_fpga.bin ]; then
 fi
 
 # Make sure stuff works
-pebble ping --emulator aplite || exit
+pebble ping --emulator aplite
 cd ~/FreeRTOS-Pebble
 make
 
