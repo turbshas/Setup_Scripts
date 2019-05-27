@@ -74,6 +74,13 @@ else
     sudo $PKGMGR silversearcher-ag
 fi
 
+# Stuff for themes
+if [ "$OS" = "arch" ]; then
+    sudo $PKGMGR gtk-engine-murrine gtk-engines
+else
+    sudo $PKGMGR gtk2-engines-murrine gtk2-engines-pixbuf
+fi
+
 if which acpi; then
     output "============== Installing ACPI utility =========================="
     sudo $PKGMGR acpi
@@ -83,6 +90,10 @@ if [ ! -e ~/.settings ]; then
     output "=============== Cloning the repo ================="
     git clone https://github.com/turbshas/Setup_Scripts.git ~/.settings
     cd ~/.settings
+fi
+
+if [ ! -e ~/.themes ]; then
+    ln -s themes ~/.themes
 fi
 
 #install zsh if not installed
