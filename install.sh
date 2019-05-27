@@ -93,7 +93,7 @@ if [ ! -e ~/.settings ]; then
 fi
 
 if [ ! -e ~/.themes ]; then
-    ln -s themes ~/.themes
+    ln -s ~/.settings/themes ~/.themes
 fi
 
 #install zsh if not installed
