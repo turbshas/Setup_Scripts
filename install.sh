@@ -18,6 +18,10 @@ else
     PKGMGR="apt install -y"
 fi
 
+sudo $PKGMGR git
+sudo $PKGMGR zsh
+sudo $PKGMGR curl
+
 pwd=`pwd`
 git_prog=`command -v git`
 zsh_prog=`command -v zsh`
@@ -51,20 +55,9 @@ output()
 	printf "${NORMAL}"
 }
 
-if [ -z "${curl_prog}" ]; then
-    output "============== Installing Curl =========================="
-	sudo $PKGMGR curl
-fi
 
-if [ -z "${git_prog}" ]; then
-    output "============== Installing Git =========================="
-	sudo $PKGMGR git
-fi
-
-if which vim; then
-    output "============== Installing VIM =========================="
-    sudo $PKGMGR vim
-fi
+output "============== Installing VIM =========================="
+sudo $PKGMGR vim
 
 if [ "$OS" = "arch" ]; then
     output "============== Installing Ag =========================="
@@ -102,22 +95,19 @@ if [ -z "${zsh_prog}" ]; then
 	sudo $PKGMGR zsh
 fi
 
-#Install Oh my Zsh
-output "=============== Installing OH MY ZSH ================="
-curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh.sh
-sed -i '/env zsh/d' oh.sh
-sed -i '/chsh -s/d' oh.sh
-chmod +x oh.sh
-./oh.sh
-rm -f ./oh.sh
+if [ ! -e ~/.oh-my-zsh ]; then
+	#Install Oh my Zsh
+	output "=============== Installing OH MY ZSH ================="
+	curl -Lo oh.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+	chmod +x oh.sh
+	./oh.sh
+	rm -f ./oh.sh
 
-if [ -e ~/.oh-my-zsh ]; then
-    rm -rf ~/.oh-my-zsh
+	#Add additional plugins for ZSH not found in oh-my-zsh
+	git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/marzocchi/zsh-notify.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/notify
 fi
-#Add additional plugins for ZSH not found in oh-my-zsh
-git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/marzocchi/zsh-notify.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/notify
 
 #setup softlinks
 if [ ! -e ~/.vimrc ]; then
@@ -182,6 +172,7 @@ cd fonts
 ./install.sh
 
 output "=============== Setting up gnome-terminal ==============="
+sudo $PKGMGR libgconf2-dev
 # uncheck use system font in gnome-terminal
 gconftool-2 --set /apps/gnome-terminal/profiles/Default/use_system_font --type=boolean false
 # set gnome-terminal to use powerline font

@@ -12,5 +12,8 @@ if [ ! -d ~/.config/terminator ]; then
 	mkdir -p ~/.config/terminator
 fi
 
-#create soft link to config file
-ln -s ~/.settings/terminator/config ~/.config/terminator/config
+if [ ! -e ~/.config/terminator/config ]; then
+	#create soft link to config file
+	ln -s ~/.settings/terminator/config ~/.config/terminator/config
+fi
+
