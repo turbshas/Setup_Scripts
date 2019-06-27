@@ -119,7 +119,7 @@ if [ ! -e ~/.zshrc.orig.ohmyzsh ]; then
 fi
 echo "\"Add your custom vim settings to this file" > ~/.myvimrc
 echo "#Add your custom zsh settings to this file" > ~/.myzshrc
-if [ ~ -e ~/.zshrc ]; then
+if [ ! -e ~/.zshrc ]; then
     ln -s ~/.settings/zshrc ~/.zshrc
 fi
 
