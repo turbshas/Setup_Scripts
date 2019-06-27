@@ -89,16 +89,11 @@ if [ ! -e ~/.themes ]; then
     ln -s ~/.settings/themes ~/.themes
 fi
 
-#install zsh if not installed
-if [ -z "${zsh_prog}" ]; then
-	output "=============== Installing ZSH ================="
-	sudo $PKGMGR zsh
-fi
-
 if [ ! -e ~/.oh-my-zsh ]; then
 	#Install Oh my Zsh
 	output "=============== Installing OH MY ZSH ================="
 	curl -Lo oh.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    sed -i 's/! chsh -s "$zsh"/false/g' oh.sh
 	chmod +x oh.sh
 	./oh.sh
 	rm -f ./oh.sh
