@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exuo pipefail
 
 #check what distro we are on
 if [ -f /etc/os-release ]; then
