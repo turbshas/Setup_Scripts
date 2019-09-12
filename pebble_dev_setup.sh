@@ -8,7 +8,8 @@ pip install virtualenv
 
 # Setup pebble-dev directory, whatever that's supposed to do
 PEBBLE_DEV_NAME="pebble-sdk-4.5-linux64"
-PEBBLE_DEV_TAR_NAME="$PEBBLE_DEV_NAME.tar.gz"
+#PEBBLE_DEV_TAR_NAME="$PEBBLE_DEV_NAME.tar.gz"
+PEBBLE_DEV_TAR_NAME="$PEBBLE_DEV_NAME.tar.bz2"
 if [ ! -e ~/pebble-dev ]; then
     mkdir ~/pebble-dev
     cd ~/pebble-dev
