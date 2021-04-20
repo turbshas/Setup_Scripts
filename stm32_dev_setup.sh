@@ -22,6 +22,6 @@ fi
 
 if [ ! -e ~/Pebble_Setup ]; then
     cd ~
-    git clone https://github.com/turbshas/Pebble_Startup.git
+    git clone https://github.com/turbshas/OS_Project.git
 fi
 

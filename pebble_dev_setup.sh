@@ -48,11 +48,12 @@ if [ ! -e ~/.pebble-sdk ]; then
     touch ~/.pebble-sdk/NO_TRACKING
     pebble sdk install https://github.com/aveao/PebbleArchive/raw/master/SDKCores/sdk-core-4.3.tar.bz2
 fi
+exit 0
 
-if [ ! -e ~/Pebble_Startup ]; then
+if [ ! -e ~/OS_Project ]; then
     # Clone my repo
     cd ~
-    git clone https://github.com/turbshas/Pebble_Startup.git
+    git clone https://github.com/turbshas/OS_Project.git
 fi
 
 if [ ! -e ~/FreeRTOS-Pebble ]; then
