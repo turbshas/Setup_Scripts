@@ -14,7 +14,8 @@ if [ ! -e "$HOME/$XPACK_DIRECTORY" ]; then
     tar -xzf $XPACK_TAR
 fi
 
-ADD_TO_PATH_STRING='export PATH="$PATH:$HOME/$XPACK_DIRECTORY/bin"'
+NEW_PATH_STRING="\$PATH:$HOME/$XPACK_DIRECTORY/bin"
+ADD_TO_PATH_STRING="export PATH=\"$NEW_PATH_STRING\""
 set +x
 echo "Run the following line to add the xpack directory to the PATH:"
 echo "echo '$ADD_TO_PATH_STRING' >> ~/.myzshrc"
