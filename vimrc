@@ -205,5 +205,7 @@ let g:gitgutter_max_signs = 5000 "max diff of 5000 lines
 "syn match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
 "hi def link cCustomFunc Function
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 " Add custom vim settings
 source $HOME/.myvimrc

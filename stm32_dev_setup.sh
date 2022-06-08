@@ -20,7 +20,7 @@ if [ ! -e ~/qemu_pebble ]; then
     echo "~/qemu/pebble/bin"
 fi
 
-if [ ! -e ~/Pebble_Setup ]; then
+if [ ! -e ~/OS_Project ]; then
     cd ~
     git clone https://github.com/turbshas/OS_Project.git
 fi
