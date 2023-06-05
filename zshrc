@@ -106,6 +106,8 @@ alias zshrc='vim ~/.zshrc'
 alias myvimrc='vim ~/.myvimrc'
 alias myzshrc='vim ~/.myzshrc'
 alias vi='vim'
+alias start-ssh-with-key='eval $(ssh-agent) && ssh-add ~/ssh-keys/id_rsa'
+alias change-ssh-key-password='ssh-keygen -p -f ~/.ssh/id_rsa'
 
 # usage:
 # Go to a folder to save as a bookmark
