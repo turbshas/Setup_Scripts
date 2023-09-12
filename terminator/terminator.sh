@@ -1,11 +1,11 @@
 #!/bin/bash
 
-. ~/.settings/common.sh
+source ~/.settings/install_scripts/common.sh
 
-#exit script on any failure
-set -e
-
-sudo $PKGMGR terminator #install terminator 
+if ! which terminator ; then
+    output "=============== Install terminator ==============="
+	sudo $PKGMGR terminator
+fi
 
 #create config directory if it does not exist 
 if [ ! -d ~/.config/terminator ]; then

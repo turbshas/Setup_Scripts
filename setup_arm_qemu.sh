@@ -19,4 +19,3 @@ ADD_TO_PATH_STRING="export PATH=\"$NEW_PATH_STRING\""
 set +x
 echo "Run the following line to add the xpack directory to the PATH:"
 echo "echo '$ADD_TO_PATH_STRING' >> ~/.myzshrc"
-

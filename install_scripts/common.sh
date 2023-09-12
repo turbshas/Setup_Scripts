@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exuo pipefail
+
 #check what distro we are on
 if [ -f /etc/os-release ]; then
     . /etc/os-release
@@ -16,3 +18,6 @@ else
     PKGMGR="apt install -y"
 fi
 
+source ~/.settings/instal_scripts/ask.sh
+
+source ~/.settings/instal_scripts/output.sh
