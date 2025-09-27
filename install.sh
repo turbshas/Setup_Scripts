@@ -30,7 +30,7 @@ source ~/.settings/install_scripts/common.sh
 
 source ~/.settings/install_scripts/packages.sh
 
-source ~/.settings/install_scripts/oh_my_zsh.sh
+source ~/.settings/install_scripts/zsh.sh
 
 source ~/.settings/insall_scripts/vim.sh
 
@@ -45,3 +45,4 @@ source ~/.settings/install_scripts/themes.sh
 output "=============== vimrc and zshrc files are now in your home folder ================="
 output "=============== Add custom vim settings to .myvimrc and zsh settings to .myzshrc files ============"
 output "=============== Setup successful =================="
+
